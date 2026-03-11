@@ -1,0 +1,120 @@
+.section {
+  position: relative;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 60px 15px;
+  }
+}
+
+.section.hero {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  background-image: url("https://cdn.prod.website-files.com/69b0d21e1608b7959b777e5d/69b0d2201608b7959b777f09_Localization%20Demo.svg");
+  background-position: 0% 100%;
+  background-size: cover;
+}
+
+.section.metrics {
+  background-image: radial-gradient(circle farthest-corner at 0% 50%, hsla(0, 0.00%, 6.00%, 1.00), hsla(0, 0.00%, 0.00%, 0.00) 21%), radial-gradient(circle farthest-corner at 90% 50%, hsla(0, 0.00%, 5.33%, 1.00), hsla(0, 0.00%, 0.00%, 0.00) 18%);
+}
+
+.section.cta {
+  overflow: hidden;
+  padding-bottom: 0px;
+
+  background-image: url("https://cdn.prod.website-files.com/69b0d21e1608b7959b777e5d/69b0d2201608b7959b777f02_Background-CTA2.svg");
+  background-position: 50% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: inset 20px 0 60px 0 hsla(0, 0.00%, 0.00%, 1.00);
+}
+
+.section.contact {
+  padding-top: 60px;
+  padding-bottom: 0px;
+}
+
+.section.contact:lang(fr) {
+  padding-bottom: 20px;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    max-width: none;
+  }
+}
+
+.cta-header-component {
+  display: grid;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .cta-header-component {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .cta-header-component {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-text-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 32px;
+}
+
+.hero-heading {
+  margin-bottom: 0px;
+  font-size: 54px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-heading {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero-heading {
+    font-size: 28px;
+  }
+}
+
+.header-image-wrapper {
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .header-image-wrapper {
+    display: flex;
+    min-height: auto;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
