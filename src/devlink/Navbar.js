@@ -98,18 +98,18 @@ export function Navbar({
               <_Builtin.NavbarLink
                 className={_utils.cx(_styles, "navbar-link")}
                 options={{
-                  href: "/contact-us",
+                  href: "/app/submit",
                 }}
               >
-                {navbarLinkContact}
+                {"Submit"}
               </_Builtin.NavbarLink>
               <_Builtin.NavbarLink
                 className={_utils.cx(_styles, "navbar-link")}
                 options={{
-                  href: "#",
+                  href: "/app/submissions",
                 }}
               >
-                {navbarLinkContact}
+                {"Careers"}
               </_Builtin.NavbarLink>
             </_Builtin.Block>
             <_Builtin.Block
