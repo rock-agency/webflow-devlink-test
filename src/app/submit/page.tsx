@@ -10,6 +10,7 @@ import {
   FormButton,
 } from "@/devlink/_Builtin";
 import { PagesHeader } from "@/devlink/PagesHeader";
+import styles from "./SubmitForm.module.css";
 
 function getApiBase() {
   if (typeof window === "undefined") return "";
@@ -51,58 +52,54 @@ export default function SubmitPage() {
   return (
     <>
       <PagesHeader title="Submit" />
-      <Section tag="section" style={{ padding: "2rem 0" }}>
-        <Block tag="div" className="container" style={{ maxWidth: "720px", margin: "0 auto" }}>
+      <Section tag="section" className={styles.pageSection}>
+        <Block tag="div" className={styles.container}>
           <FormForm
             data-name="Submissions Form"
             id="submissions-form"
             onSubmit={handleSubmit}
-            style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "1.5rem" }}
+            className={styles.form}
           >
-            <Block tag="div">
+            <Block tag="div" className={styles.field}>
               <FormTextInput
+                className={styles.input}
                 name="name"
                 placeholder="Name"
                 required
                 type="text"
                 maxLength={256}
-                style={{ width: "100%", padding: "0.5rem" }}
               />
             </Block>
-            <Block tag="div">
+            <Block tag="div" className={styles.field}>
               <FormTextInput
+                className={styles.input}
                 name="email"
                 placeholder="Email"
                 required
                 type="email"
                 maxLength={256}
-                style={{ width: "100%", padding: "0.5rem" }}
               />
             </Block>
-            <Block tag="div">
+            <Block tag="div" className={styles.field}>
               <FormTextarea
+                className={`${styles.input} ${styles.textarea}`}
                 name="message"
                 placeholder="Message (optional)"
-                style={{ width: "100%", minHeight: "80px", padding: "0.5rem" }}
               />
             </Block>
-            <FormButton type="submit" value="Submit" className="w-button" />
+            <FormButton
+              type="submit"
+              value="Submit"
+              className={`${styles.button} w-button`}
+            />
           </FormForm>
           {submitStatus === "success" && (
-            <Block
-              tag="div"
-              className="w-form-done"
-              style={{ padding: "0.75rem", background: "#d1fae5", borderRadius: "4px" }}
-            >
+            <Block tag="div" className={`${styles.successMessage} w-form-done`}>
               Thank you. Your submission has been saved.
             </Block>
           )}
           {submitStatus === "error" && (
-            <Block
-              tag="div"
-              className="w-form-fail"
-              style={{ padding: "0.75rem", background: "#fee2e2", borderRadius: "4px" }}
-            >
+            <Block tag="div" className={`${styles.errorMessage} w-form-fail`}>
               Something went wrong. Please check your entries and try again.
             </Block>
           )}
