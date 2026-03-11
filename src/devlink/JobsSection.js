@@ -17,7 +17,9 @@ export function JobsSection({
   jobComponentText6 = "Melbourne, Australia",
   jobComponentText7 = "Any additional information submitted from the form",
   jobComponentText8 = "Melbourne, Australia",
+  jobs,
 }) {
+  const hasJobs = Array.isArray(jobs) && jobs.length > 0;
   return (
     <_Component
       className={_utils.cx(_styles, "section", "metrics")}
@@ -35,6 +37,21 @@ export function JobsSection({
             className={_utils.cx(_styles, "jobs-layout")}
             tag="div"
           >
+            {hasJobs
+              ? jobs.map((job) => (
+                  <JobComponent
+                    key={job.id}
+                    text1={job.text1 ?? jobComponentText1}
+                    text2={job.text2 ?? jobComponentText2}
+                    text3={job.text3 ?? jobComponentText3}
+                    text4={job.text4 ?? jobComponentText4}
+                    text5={job.text5 ?? jobComponentText5}
+                    text6={job.text6 ?? jobComponentText6}
+                    text7={job.text7 ?? jobComponentText7}
+                    text8={job.text8 ?? jobComponentText8}
+                  />
+                ))
+              : (
             <JobComponent
               text1={jobComponentText1}
               text2={jobComponentText2}
@@ -45,6 +62,7 @@ export function JobsSection({
               text7={jobComponentText7}
               text8={jobComponentText8}
             />
+              )}
           </_Builtin.Block>
         </_Builtin.Block>
         <_Builtin.Image
